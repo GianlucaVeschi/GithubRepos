@@ -3,6 +3,7 @@ package com.gianlucaveschi.githubrepos.ui.main.di
 import android.content.Context
 import com.gianlucaveschi.githubrepos.BuildConfig
 import com.gianlucaveschi.githubrepos.ui.main.api.GithubService
+import com.gianlucaveschi.githubrepos.ui.main.interactors.GetGithubRepoListUseCase
 import com.gianlucaveschi.githubrepos.ui.main.repo.MainRepository
 import com.gianlucaveschi.githubrepos.ui.main.repo.MainRepositoryImpl
 import com.google.gson.GsonBuilder
@@ -33,7 +34,6 @@ object AppModule {
     @Provides
     fun provideHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
-        @ApplicationContext appContext: Context
     ): OkHttpClient {
         return OkHttpClient.Builder()
             .addNetworkInterceptor(loggingInterceptor)
@@ -59,4 +59,11 @@ object AppModule {
     fun provideRepository(githubService: GithubService): MainRepository {
         return MainRepositoryImpl(githubService)
     }
+
+    @Singleton
+    @Provides
+    fun provideGetGithubRepoListUseCase(
+        mainRepository: MainRepository
+    ) = GetGithubRepoListUseCase(mainRepository)
+
 }
