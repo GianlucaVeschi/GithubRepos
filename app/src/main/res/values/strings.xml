@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GithubRepos</string>
+    <string name="repository_name">repository_name</string>
+    <string name="repository_stars">repository_stars</string>
 </resources>
