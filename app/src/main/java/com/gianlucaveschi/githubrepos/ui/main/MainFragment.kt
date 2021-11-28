@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gianlucaveschi.githubrepos.databinding.MainFragmentBinding
 import com.gianlucaveschi.githubrepos.ui.main.model.Repos
@@ -32,19 +33,25 @@ class MainFragment : Fragment(), ReposAdapter.OnRepoClickListener {
         super.onViewCreated(view, savedInstanceState)
         initBinding()
         mainViewModel.getDataFromGithub()
+        mainViewModel.githubRepos.observe(viewLifecycleOwner, { repos ->
+            reposAdapter = ReposAdapter(this, repos)
+            binding.reposRecView.adapter = reposAdapter
+        })
     }
 
     private fun initBinding() {
+        binding.reposRecView.apply {
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(activity)
+        }
+    }
+
+    private fun initHardcodedRepos(): Repos {
         val repos = Repos()
         for (i in 0 until 10) {
             repos.add(ReposItem(name = "repository N$i"))
         }
-        reposAdapter = ReposAdapter(this, repos)
-        binding.reposRecView.apply {
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(activity)
-            adapter = reposAdapter
-        }
+        return repos
     }
 
 
@@ -53,7 +60,7 @@ class MainFragment : Fragment(), ReposAdapter.OnRepoClickListener {
     }
 
     override fun onRepoClicked(repoName: String) {
-        Log.d("MainFragment", "onRepoClicked: ")
+        Log.d("MainFragment", "onRepoClicked: $repoName")
     }
 
 }
