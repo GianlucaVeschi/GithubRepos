@@ -6,6 +6,10 @@ plugins {
     id 'kotlinx-serialization'
 }
 
+def apikeyPropertiesFile = rootProject.file("api.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdk 31
 
@@ -17,6 +21,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "GITHUB_ENDPOINT", apikeyProperties['GITHUB_ENDPOINT'])
     }
 
     buildTypes {

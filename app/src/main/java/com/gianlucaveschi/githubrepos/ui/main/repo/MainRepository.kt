@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 
 interface MainRepository {
-    suspend fun getGithubRepos() : Response<List<ReposItem>>
+    suspend fun getGithubRepos() : Response<Repos>
 }
