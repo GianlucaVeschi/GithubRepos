@@ -1,4 +1,4 @@
-package com.gianlucaveschi.githubrepos.ui.main.model
+package com.gianlucaveschi.githubrepos.model
 
 import kotlinx.serialization.Serializable
 

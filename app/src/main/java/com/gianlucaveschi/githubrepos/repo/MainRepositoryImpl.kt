@@ -1,7 +1,7 @@
-package com.gianlucaveschi.githubrepos.ui.main.repo
+package com.gianlucaveschi.githubrepos.repo
 
-import com.gianlucaveschi.githubrepos.ui.main.api.GithubService
-import com.gianlucaveschi.githubrepos.ui.main.model.Repos
+import com.gianlucaveschi.githubrepos.api.GithubService
+import com.gianlucaveschi.githubrepos.model.Repos
 import retrofit2.Response
 
 class MainRepositoryImpl(

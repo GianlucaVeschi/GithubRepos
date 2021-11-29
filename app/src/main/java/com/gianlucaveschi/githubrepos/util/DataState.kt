@@ -1,4 +1,4 @@
-package com.gianlucaveschi.githubrepos.ui.main.util
+package com.gianlucaveschi.githubrepos.util
 
 data class DataState<out T>(
     val data: T? = null,

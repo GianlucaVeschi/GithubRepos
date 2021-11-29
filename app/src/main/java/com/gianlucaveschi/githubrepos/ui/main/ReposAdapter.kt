@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gianlucaveschi.githubrepos.databinding.RepoItemViewBinding
-import com.gianlucaveschi.githubrepos.ui.main.model.Repos
-import com.gianlucaveschi.githubrepos.ui.main.model.ReposItem
+import com.gianlucaveschi.githubrepos.model.Repos
+import com.gianlucaveschi.githubrepos.model.ReposItem
 
 class ReposAdapter(
     private val listener: OnRepoClickListener,

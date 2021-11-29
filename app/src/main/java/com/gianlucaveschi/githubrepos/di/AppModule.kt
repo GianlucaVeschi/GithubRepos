@@ -1,16 +1,14 @@
-package com.gianlucaveschi.githubrepos.ui.main.di
+package com.gianlucaveschi.githubrepos.di
 
-import android.content.Context
 import com.gianlucaveschi.githubrepos.BuildConfig
-import com.gianlucaveschi.githubrepos.ui.main.api.GithubService
-import com.gianlucaveschi.githubrepos.ui.main.interactors.GetGithubRepoListUseCase
-import com.gianlucaveschi.githubrepos.ui.main.repo.MainRepository
-import com.gianlucaveschi.githubrepos.ui.main.repo.MainRepositoryImpl
+import com.gianlucaveschi.githubrepos.api.GithubService
+import com.gianlucaveschi.githubrepos.interactors.GetGithubRepoListUseCase
+import com.gianlucaveschi.githubrepos.repo.MainRepository
+import com.gianlucaveschi.githubrepos.repo.MainRepositoryImpl
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

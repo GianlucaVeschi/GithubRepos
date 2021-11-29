@@ -1,8 +1,8 @@
-package com.gianlucaveschi.githubrepos.ui.main.interactors
+package com.gianlucaveschi.githubrepos.interactors
 
-import com.gianlucaveschi.githubrepos.ui.main.model.Repos
-import com.gianlucaveschi.githubrepos.ui.main.repo.MainRepository
-import com.gianlucaveschi.githubrepos.ui.main.util.DataState
+import com.gianlucaveschi.githubrepos.model.Repos
+import com.gianlucaveschi.githubrepos.repo.MainRepository
+import com.gianlucaveschi.githubrepos.util.DataState
 
 class GetGithubRepoListUseCase(
     private val mainRepository: MainRepository
