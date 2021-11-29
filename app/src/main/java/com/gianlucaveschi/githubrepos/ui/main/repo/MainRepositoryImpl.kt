@@ -8,8 +8,6 @@ class MainRepositoryImpl(
     private val githubService: GithubService
 ) : MainRepository {
 
-    override suspend fun getGithubRepos(): Response<Repos> {
-        return githubService.getGithubRepoList()
-    }
+    override suspend fun getGithubRepos(): Response<Repos> = githubService.getGithubRepoList()
 
 }

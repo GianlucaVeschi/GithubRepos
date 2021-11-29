@@ -21,7 +21,10 @@ class MainViewModel @Inject constructor(
 
     fun getDataFromGithub() {
         viewModelScope.launch {
-            _githubRepos.value = getGithubRepoListUseCase.invoke().body()
+            val state = getGithubRepoListUseCase()
+            state.data?.let {
+                _githubRepos.value = it
+            }
             githubRepos.value?.forEach {
                 Log.d(TAG, "getDataFromGithub: ${it.name}")
             }
