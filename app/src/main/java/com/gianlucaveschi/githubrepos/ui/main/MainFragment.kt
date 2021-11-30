@@ -46,19 +46,6 @@ class MainFragment : Fragment(), ReposAdapter.OnRepoClickListener {
         }
     }
 
-    private fun initHardcodedRepos(): Repos {
-        val repos = Repos()
-        for (i in 0 until 10) {
-            repos.add(ReposItem(name = "repository N$i"))
-        }
-        return repos
-    }
-
-
-    companion object {
-        fun newInstance() = MainFragment()
-    }
-
     override fun onRepoClicked(repoName: String) {
         Log.d("MainFragment", "onRepoClicked: $repoName")
     }

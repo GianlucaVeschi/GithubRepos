@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.gianlucaveschi.githubrepos.ui.main.MainFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/main_fragment" >
+
+    </fragment>
+
+
+
+</navigation>
