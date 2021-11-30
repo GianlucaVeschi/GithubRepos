@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.gianlucaveschi.githubrepos.ui.main.GhRepoListFragment"
+        android:name="com.gianlucaveschi.githubrepos.ui.list.GhRepoListFragment"
         android:label="fragment_list"
         tools:layout="@layout/gh_repo_list_fragment">
         <action
@@ -27,6 +27,9 @@
         <argument
             android:name="repo_id"
             app:argType="integer" />
+        <argument
+            android:name="repo_name"
+            app:argType="string" />
     </fragment>
 
 </navigation>

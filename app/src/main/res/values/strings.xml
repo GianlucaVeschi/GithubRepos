@@ -5,4 +5,6 @@
     <string name="repo_name">Repository Name</string>
     <string name="repo_id">Repository Id</string>
     <string name="commits">commits</string>
+    <string name="commit_message">commit message</string>
+    <string name="commit_date">commit date</string>
 </resources>

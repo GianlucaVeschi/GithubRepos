@@ -1,9 +1,9 @@
-package com.gianlucaveschi.githubrepos.model
+package com.gianlucaveschi.githubrepos.model.commits
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Owner(
+data class CommitterX(
     val avatar_url: String,
     val events_url: String,
     val followers_url: String,

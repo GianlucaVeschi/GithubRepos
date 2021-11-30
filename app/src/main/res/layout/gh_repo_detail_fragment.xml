@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
-
-        <TextView
-            android:id="@+id/linkedin_commits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/commits"
-            android:textColor="#000"
-            android:textSize="30sp" />
+        android:padding="10dp"
+        android:gravity="center">
 
         <TextView
             android:id="@+id/github_repo_name"
@@ -22,7 +16,7 @@
             android:layout_height="wrap_content"
             android:text="@string/repository_name"
             android:textColor="#000"
-            android:textSize="18sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/github_repo_id"
@@ -32,5 +26,31 @@
             android:textColor="#000"
             android:textSize="16sp" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/commits_rec_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/commit_item_view" />
+
+            <ProgressBar
+                android:id="@+id/main_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
     </LinearLayout>
+
 </layout>

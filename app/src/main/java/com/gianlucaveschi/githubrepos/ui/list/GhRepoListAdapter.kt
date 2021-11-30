@@ -1,16 +1,16 @@
-package com.gianlucaveschi.githubrepos.ui.main
+package com.gianlucaveschi.githubrepos.ui.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gianlucaveschi.githubrepos.databinding.RepoItemViewBinding
-import com.gianlucaveschi.githubrepos.model.Repos
-import com.gianlucaveschi.githubrepos.model.ReposItem
+import com.gianlucaveschi.githubrepos.model.GhRepoList
+import com.gianlucaveschi.githubrepos.model.repo.GhRepoListItem
 
 class GhRepoListAdapter(
     private val listener: OnRepoClickListener,
-    private val githubReposList: Repos
+    private val githubGhRepoListList: GhRepoList
 ) : RecyclerView.Adapter<GhRepoListAdapter.GithubRepoViewHolder>() {
 
     inner class GithubRepoViewHolder(
@@ -21,35 +21,33 @@ class GhRepoListAdapter(
             itemView.setOnClickListener(this)
         }
 
-        fun bind(reposItem: ReposItem) {
-            binding.repoName.text = reposItem.name
-            binding.repoId.text = reposItem.id.toString()
+        fun bind(ghRepoListItem: GhRepoListItem) {
+            binding.repoName.text = ghRepoListItem.name
+            binding.repoId.text = ghRepoListItem.id.toString()
         }
 
         override fun onClick(v: View?) {
-            listener.onRepoClicked(githubReposList[adapterPosition].id)
+            listener.onRepoClicked(
+                githubGhRepoListList[adapterPosition].id,
+                githubGhRepoListList[adapterPosition].name
+            )
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubRepoViewHolder {
-
         val layoutInflater = LayoutInflater.from(parent.context)
-
         val binding = RepoItemViewBinding.inflate(layoutInflater, parent, false)
-
         return GithubRepoViewHolder(binding)
     }
 
-    override fun getItemCount() = githubReposList.size
+    override fun getItemCount() = githubGhRepoListList.size
 
     override fun onBindViewHolder(holder: GithubRepoViewHolder, position: Int) {
-
-        val githubRepoItem: ReposItem = githubReposList[position]
-
-        holder.bind(githubRepoItem)
+        val githubRepoListItem: GhRepoListItem = githubGhRepoListList[position]
+        holder.bind(githubRepoListItem)
     }
 
     interface OnRepoClickListener {
-        fun onRepoClicked(repoId: Int)
+        fun onRepoClicked(repoId: Int, repoName: String)
     }
 }

@@ -3,6 +3,7 @@ package com.gianlucaveschi.githubrepos.di
 import com.gianlucaveschi.githubrepos.BuildConfig
 import com.gianlucaveschi.githubrepos.api.GithubService
 import com.gianlucaveschi.githubrepos.interactors.GetGithubRepoListUseCase
+import com.gianlucaveschi.githubrepos.interactors.GetRepoCommitListUseCase
 import com.gianlucaveschi.githubrepos.repo.MainRepository
 import com.gianlucaveschi.githubrepos.repo.MainRepositoryImpl
 import com.google.gson.GsonBuilder
@@ -63,5 +64,11 @@ object AppModule {
     fun provideGetGithubRepoListUseCase(
         mainRepository: MainRepository
     ) = GetGithubRepoListUseCase(mainRepository)
+
+    @Singleton
+    @Provides
+    fun provideGetRepoCommitListUseCase(
+        mainRepository: MainRepository
+    ) = GetRepoCommitListUseCase(mainRepository)
 
 }

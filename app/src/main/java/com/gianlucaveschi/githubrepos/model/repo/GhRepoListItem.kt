@@ -1,9 +1,9 @@
-package com.gianlucaveschi.githubrepos.model
+package com.gianlucaveschi.githubrepos.model.repo
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ReposItem(
+data class GhRepoListItem(
     val allow_forking: Boolean? = null,
     val archive_url: String? = null,
     val archived: Boolean? = null,
