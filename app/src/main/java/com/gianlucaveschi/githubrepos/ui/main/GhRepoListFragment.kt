@@ -1,7 +1,6 @@
 package com.gianlucaveschi.githubrepos.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,33 +8,31 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.gianlucaveschi.githubrepos.databinding.MainFragmentBinding
-import com.gianlucaveschi.githubrepos.model.Repos
-import com.gianlucaveschi.githubrepos.model.ReposItem
+import com.gianlucaveschi.githubrepos.databinding.GhRepoListFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainFragment : Fragment(), ReposAdapter.OnRepoClickListener {
+class GhRepoListFragment : Fragment(), GhRepoListAdapter.OnRepoClickListener {
 
-    private val mainViewModel: MainViewModel by viewModels()
-    private lateinit var binding: MainFragmentBinding
-    private lateinit var reposAdapter: ReposAdapter
+    private val ghRepoListViewModel: GhRepoListViewModel by viewModels()
+    private lateinit var binding: GhRepoListFragmentBinding
+    private lateinit var ghRepoListAdapter: GhRepoListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = MainFragmentBinding.inflate(inflater, container, false)
+        binding = GhRepoListFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initBinding()
-        mainViewModel.getDataFromGithub()
-        mainViewModel.githubRepos.observe(viewLifecycleOwner, { repos ->
-            reposAdapter = ReposAdapter(this, repos)
-            binding.reposRecView.adapter = reposAdapter
+        ghRepoListViewModel.getDataFromGithub()
+        ghRepoListViewModel.githubRepos.observe(viewLifecycleOwner, { repos ->
+            ghRepoListAdapter = GhRepoListAdapter(this, repos)
+            binding.reposRecView.adapter = ghRepoListAdapter
             binding.mainProgressBar.visibility = View.INVISIBLE
         })
     }
@@ -48,7 +45,7 @@ class MainFragment : Fragment(), ReposAdapter.OnRepoClickListener {
     }
 
     override fun onRepoClicked(repoId: Int) {
-        val action = MainFragmentDirections.actionListFragmentToDetailFragment(repoId)
+        val action = GhRepoListFragmentDirections.actionListFragmentToDetailFragment(repoId)
         findNavController().navigate(action)
     }
 

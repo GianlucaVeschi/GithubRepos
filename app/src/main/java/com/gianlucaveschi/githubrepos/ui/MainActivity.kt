@@ -1,4 +1,4 @@
-package com.gianlucaveschi.githubrepos.ui.main
+package com.gianlucaveschi.githubrepos.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

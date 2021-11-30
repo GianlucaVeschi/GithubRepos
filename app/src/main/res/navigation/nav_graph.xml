@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.gianlucaveschi.githubrepos.ui.main.MainFragment"
+        android:name="com.gianlucaveschi.githubrepos.ui.main.GhRepoListFragment"
         android:label="fragment_list"
-        tools:layout="@layout/main_fragment">
+        tools:layout="@layout/gh_repo_list_fragment">
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
             app:destination="@id/detailFragment"

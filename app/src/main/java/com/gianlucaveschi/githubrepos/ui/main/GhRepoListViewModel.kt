@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(
+class GhRepoListViewModel @Inject constructor(
     private val getGithubRepoListUseCase: GetGithubRepoListUseCase
 ) : ViewModel() {
 
