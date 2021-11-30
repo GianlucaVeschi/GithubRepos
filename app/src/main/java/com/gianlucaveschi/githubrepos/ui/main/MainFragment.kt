@@ -35,6 +35,7 @@ class MainFragment : Fragment(), ReposAdapter.OnRepoClickListener {
         mainViewModel.githubRepos.observe(viewLifecycleOwner, { repos ->
             reposAdapter = ReposAdapter(this, repos)
             binding.reposRecView.adapter = reposAdapter
+            binding.mainProgressBar.visibility = View.INVISIBLE
         })
     }
 
