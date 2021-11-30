@@ -32,7 +32,7 @@ class ReposAdapter(
         }
 
         override fun onClick(v: View?) {
-            listener.onRepoClicked(githubReposList[adapterPosition].name)
+            listener.onRepoClicked(githubReposList[adapterPosition].id)
         }
     }
 
@@ -63,6 +63,6 @@ class ReposAdapter(
     }
 
     interface OnRepoClickListener {
-        fun onRepoClicked(repoName: String)
+        fun onRepoClicked(repoId: Int)
     }
 }

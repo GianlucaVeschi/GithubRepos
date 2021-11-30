@@ -41,7 +41,7 @@ data class ReposItem(
     val homepage: String? = null,
     val hooks_url: String? = null,
     val html_url: String? = null,
-    val id: Int? = null,
+    val id: Int,
     val is_template: Boolean? = null,
     val issue_comment_url: String? = null,
     val issue_events_url: String? = null,

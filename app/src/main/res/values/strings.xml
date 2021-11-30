@@ -2,4 +2,7 @@
     <string name="app_name">GithubRepos</string>
     <string name="repository_name">repository_name</string>
     <string name="repository_stars">repository_stars</string>
+    <string name="repo_name">Repository Name</string>
+    <string name="repo_id">Repository Id</string>
+    <string name="commits">commits</string>
 </resources>
