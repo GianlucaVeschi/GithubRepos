@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.gianlucaveschi.githubrepos.databinding.GhRepoDetailFragmentBinding
 import com.gianlucaveschi.githubrepos.model.GhCommitList
 import com.gianlucaveschi.githubrepos.ui.list.GhRepoListAdapter
@@ -43,15 +44,14 @@ class GhRepoDetailFragment : Fragment() {
         ghCommitListAdapter = GhCommitListAdapter(commits)
         binding.commitsRecView.adapter = ghCommitListAdapter
         binding.mainProgressBar.visibility = View.INVISIBLE
-        for(commit in commits) Log.d(TAG, "updateUi: ${commit.commit.message}")
     }
 
     private fun initBinding() {
-        binding.githubRepoId.text = args.repoId.toString()
-        binding.githubRepoName.text = args.repoName
-    }
-
-    companion object {
-        private const val TAG = "GhRepoDetailFragment"
+        binding.apply {
+            githubRepoId.text = args.repoId.toString()
+            githubRepoName.text = args.repoName
+            commitsRecView.setHasFixedSize(true)
+            commitsRecView.layoutManager = LinearLayoutManager(activity)
+        }
     }
 }
