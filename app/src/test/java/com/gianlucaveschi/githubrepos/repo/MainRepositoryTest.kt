@@ -6,11 +6,8 @@ import com.gianlucaveschi.domain.repo.MainRepository
 import com.gianlucaveschi.githubrepos.BaseJunitTest
 import io.mockk.coVerify
 import io.mockk.mockk
-import io.mockk.verify
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test
-
 
 class MainRepositoryTest : BaseJunitTest<MainRepository>() {
 
