@@ -88,4 +88,13 @@ dependencies {
     // Navigation Component dependencies
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Mockk
+    testImplementation "io.mockk:mockk:$mockk_version"
+    androidTestImplementation "io.mockk:mockk-android:$mockk_version"
+
+    // Testing
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_test_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_test_version"
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
 }
