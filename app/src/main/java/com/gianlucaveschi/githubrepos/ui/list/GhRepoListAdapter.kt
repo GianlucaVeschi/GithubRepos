@@ -5,12 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gianlucaveschi.githubrepos.databinding.RepoItemViewBinding
-import com.gianlucaveschi.data.model.GhRepoList
-import com.gianlucaveschi.data.model.repo.GhRepoListItem
+import com.gianlucaveschi.domain.model.GhRepoList
 
 class GhRepoListAdapter(
     private val listener: OnRepoClickListener,
-    private val githubGhRepoListList: com.gianlucaveschi.data.model.GhRepoList
+    private val githubGhRepoListList: GhRepoList
 ) : RecyclerView.Adapter<GhRepoListAdapter.GithubRepoViewHolder>() {
 
     inner class GithubRepoViewHolder(
@@ -21,7 +20,7 @@ class GhRepoListAdapter(
             itemView.setOnClickListener(this)
         }
 
-        fun bind(ghRepoListItem: com.gianlucaveschi.data.model.repo.GhRepoListItem) {
+        fun bind(ghRepoListItem: com.gianlucaveschi.domain.model.repo.GhRepoListItem) {
             binding.repoName.text = ghRepoListItem.name
             binding.repoId.text = ghRepoListItem.id.toString()
         }
@@ -43,7 +42,7 @@ class GhRepoListAdapter(
     override fun getItemCount() = githubGhRepoListList.size
 
     override fun onBindViewHolder(holder: GithubRepoViewHolder, position: Int) {
-        val githubRepoListItem: com.gianlucaveschi.data.model.repo.GhRepoListItem = githubGhRepoListList[position]
+        val githubRepoListItem: com.gianlucaveschi.domain.model.repo.GhRepoListItem = githubGhRepoListList[position]
         holder.bind(githubRepoListItem)
     }
 

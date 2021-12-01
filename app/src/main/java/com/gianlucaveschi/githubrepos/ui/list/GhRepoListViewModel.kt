@@ -5,19 +5,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gianlucaveschi.githubrepos.interactors.GetGithubRepoListUseCase
-import com.gianlucaveschi.data.model.GhRepoList
+import com.gianlucaveschi.domain.interactors.GetGithubRepoListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class GhRepoListViewModel @Inject constructor(
-    private val getGithubRepoListUseCase: GetGithubRepoListUseCase
+    private val getGithubRepoListUseCase: com.gianlucaveschi.domain.interactors.GetGithubRepoListUseCase
 ) : ViewModel() {
 
-    private val _githubRepos = MutableLiveData<com.gianlucaveschi.data.model.GhRepoList>()
-    val githubGhRepoList: LiveData<com.gianlucaveschi.data.model.GhRepoList> get() = _githubRepos
+    private val _githubRepos = MutableLiveData<com.gianlucaveschi.domain.model.GhRepoList>()
+    val githubGhRepoList: LiveData<com.gianlucaveschi.domain.model.GhRepoList> get() = _githubRepos
 
     fun getGithubRepositoryForUser() {
         viewModelScope.launch {

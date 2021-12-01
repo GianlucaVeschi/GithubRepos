@@ -60,6 +60,7 @@ dependencies {
 
     //Module dependencies
     implementation project(path: ':data')
+    implementation project(path: ':domain')
 
     // OkHttp
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"

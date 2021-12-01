@@ -1,11 +1,7 @@
 package com.gianlucaveschi.githubrepos.di
 
 import com.gianlucaveschi.githubrepos.BuildConfig
-import com.gianlucaveschi.data.api.GithubService
-import com.gianlucaveschi.githubrepos.interactors.GetGithubRepoListUseCase
-import com.gianlucaveschi.githubrepos.interactors.GetRepoCommitListUseCase
-import com.gianlucaveschi.githubrepos.repo.MainRepository
-import com.gianlucaveschi.githubrepos.repo.MainRepositoryImpl
+import com.gianlucaveschi.data.repo.MainRepositoryImpl
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -55,20 +51,20 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRepository(githubService: com.gianlucaveschi.data.api.GithubService): MainRepository {
+    fun provideRepository(githubService: com.gianlucaveschi.data.api.GithubService): com.gianlucaveschi.domain.repo.MainRepository {
         return MainRepositoryImpl(githubService)
     }
 
     @Singleton
     @Provides
     fun provideGetGithubRepoListUseCase(
-        mainRepository: MainRepository
-    ) = GetGithubRepoListUseCase(mainRepository)
+        mainRepository: com.gianlucaveschi.domain.repo.MainRepository
+    ) = com.gianlucaveschi.domain.interactors.GetGithubRepoListUseCase(mainRepository)
 
     @Singleton
     @Provides
     fun provideGetRepoCommitListUseCase(
-        mainRepository: MainRepository
-    ) = GetRepoCommitListUseCase(mainRepository)
+        mainRepository: com.gianlucaveschi.domain.repo.MainRepository
+    ) = com.gianlucaveschi.domain.interactors.GetRepoCommitListUseCase(mainRepository)
 
 }

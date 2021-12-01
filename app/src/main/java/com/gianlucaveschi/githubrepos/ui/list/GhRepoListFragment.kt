@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gianlucaveschi.githubrepos.databinding.GhRepoListFragmentBinding
-import com.gianlucaveschi.data.model.GhRepoList
+import com.gianlucaveschi.domain.model.GhRepoList
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,7 +36,7 @@ class GhRepoListFragment : Fragment(), GhRepoListAdapter.OnRepoClickListener {
         })
     }
 
-    private fun updateUi(repos: com.gianlucaveschi.data.model.GhRepoList) {
+    private fun updateUi(repos: GhRepoList) {
         ghRepoListAdapter = GhRepoListAdapter(this, repos)
         binding.reposRecView.adapter = ghRepoListAdapter
         binding.mainProgressBar.visibility = View.INVISIBLE

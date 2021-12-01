@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gianlucaveschi.githubrepos.databinding.GhRepoDetailFragmentBinding
-import com.gianlucaveschi.data.model.GhCommitList
+import com.gianlucaveschi.domain.model.GhCommitList
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,7 +38,7 @@ class GhRepoDetailFragment : Fragment() {
         })
     }
 
-    private fun updateUi(commits: com.gianlucaveschi.data.model.GhCommitList) {
+    private fun updateUi(commits: GhCommitList) {
         ghCommitListAdapter = GhCommitListAdapter(commits)
         binding.commitsRecView.adapter = ghCommitListAdapter
         binding.mainProgressBar.visibility = View.INVISIBLE
