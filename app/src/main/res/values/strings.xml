@@ -7,4 +7,5 @@
     <string name="commits">commits</string>
     <string name="commit_message">commit message</string>
     <string name="commit_date">commit date</string>
+    <string name="account_name">Repositories for \n Gianluca Veschi</string>
 </resources>

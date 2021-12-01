@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:text="@string/repository_name"
             android:textColor="#000"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/github_repo_id"
@@ -24,7 +25,8 @@
             android:layout_height="wrap_content"
             android:text="@string/repo_id"
             android:textColor="#000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -50,7 +52,5 @@
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
-
     </LinearLayout>
-
 </layout>
