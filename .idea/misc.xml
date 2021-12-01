@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/commit_item_view.xml" value="0.31521739130434784" />
+        <entry key="app/src/main/res/layout/gh_repo_detail_fragment.xml" value="0.31521739130434784" />
+        <entry key="app/src/main/res/layout/gh_repo_list_fragment.xml" value="0.31521739130434784" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.31521739130434784" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.31521739130434784" />
         <entry key="app/src/main/res/layout/repo_item_view.xml" value="0.26766304347826086" />
