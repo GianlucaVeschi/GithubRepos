@@ -1,7 +1,7 @@
 package com.gianlucaveschi.githubrepos.repo
 
-import com.gianlucaveschi.githubrepos.model.GhCommitList
-import com.gianlucaveschi.githubrepos.model.GhRepoList
+import com.gianlucaveschi.data.model.GhCommitList
+import com.gianlucaveschi.data.model.GhRepoList
 import retrofit2.Response
 
 interface MainRepository {

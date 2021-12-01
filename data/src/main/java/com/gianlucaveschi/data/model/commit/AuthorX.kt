@@ -1,4 +1,4 @@
-package com.gianlucaveschi.githubrepos.model.commits
+package com.gianlucaveschi.data.model.commit
 
 import kotlinx.serialization.Serializable
 

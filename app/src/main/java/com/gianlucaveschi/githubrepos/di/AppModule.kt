@@ -1,7 +1,7 @@
 package com.gianlucaveschi.githubrepos.di
 
 import com.gianlucaveschi.githubrepos.BuildConfig
-import com.gianlucaveschi.githubrepos.api.GithubService
+import com.gianlucaveschi.data.api.GithubService
 import com.gianlucaveschi.githubrepos.interactors.GetGithubRepoListUseCase
 import com.gianlucaveschi.githubrepos.interactors.GetRepoCommitListUseCase
 import com.gianlucaveschi.githubrepos.repo.MainRepository
@@ -44,18 +44,18 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideGithubRestService(okHttpClient: OkHttpClient): GithubService {
+    fun provideGithubRestService(okHttpClient: OkHttpClient): com.gianlucaveschi.data.api.GithubService {
         return Retrofit.Builder()
             .baseUrl(BuildConfig.GITHUB_ENDPOINT)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
-            .create(GithubService::class.java)
+            .create(com.gianlucaveschi.data.api.GithubService::class.java)
     }
 
     @Singleton
     @Provides
-    fun provideRepository(githubService: GithubService): MainRepository {
+    fun provideRepository(githubService: com.gianlucaveschi.data.api.GithubService): MainRepository {
         return MainRepositoryImpl(githubService)
     }
 

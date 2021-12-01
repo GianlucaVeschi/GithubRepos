@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gianlucaveschi.githubrepos.interactors.GetRepoCommitListUseCase
-import com.gianlucaveschi.githubrepos.model.GhCommitList
+import com.gianlucaveschi.data.model.GhCommitList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,8 +16,8 @@ class GhRepoDetailViewModel @Inject constructor(
     private val getRepoCommitListUseCase: GetRepoCommitListUseCase
 ) : ViewModel() {
 
-    private val _githubRepoCommits = MutableLiveData<GhCommitList>()
-    val githubRepoCommits: LiveData<GhCommitList> get() = _githubRepoCommits
+    private val _githubRepoCommits = MutableLiveData<com.gianlucaveschi.data.model.GhCommitList>()
+    val githubRepoCommits: LiveData<com.gianlucaveschi.data.model.GhCommitList> get() = _githubRepoCommits
 
     fun getCommitsForRepo(repoName: String) {
         viewModelScope.launch {

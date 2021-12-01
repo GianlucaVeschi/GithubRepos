@@ -1,4 +1,4 @@
-package com.gianlucaveschi.githubrepos.model.repo
+package com.gianlucaveschi.data.model.repo
 
 import kotlinx.serialization.Serializable
 

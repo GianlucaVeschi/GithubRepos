@@ -1,6 +1,6 @@
 package com.gianlucaveschi.githubrepos.interactors
 
-import com.gianlucaveschi.githubrepos.model.GhCommitList
+import com.gianlucaveschi.data.model.GhCommitList
 import com.gianlucaveschi.githubrepos.repo.MainRepository
 import com.gianlucaveschi.githubrepos.util.DataState
 
