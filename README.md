@@ -14,8 +14,8 @@ Simply clone the project, import into Android Studio and run.
 It contains 3 modules in total:
 
 - app: Contains the views fragment/activity and the adapters.
-- domain: Contains the Repository interface and UseCases.
-- data: Contains the Repository and WebSocket implementations.
+- domain: Contains the Models, Repository interface and UseCases.
+- data: Contains the Repository implementation and Api Service declaration.
 
 ## Testing
 
