@@ -94,7 +94,7 @@ dependencies {
     androidTestImplementation "io.mockk:mockk-android:$mockk_version"
 
     // Testing
-    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_test_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:1.6.0"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlin_test_version"
     testImplementation "androidx.arch.core:core-testing:$core_testing_version"
 }
