@@ -1,7 +1,5 @@
 package com.gianlucaveschi.githubrepos.interactors
 
-import com.gianlucaveschi.data.api.GithubService
-import com.gianlucaveschi.data.repo.MainRepositoryImpl
 import com.gianlucaveschi.domain.interactors.GetRepoCommitListUseCase
 import com.gianlucaveschi.domain.repo.MainRepository
 import com.gianlucaveschi.githubrepos.BaseJunitTest

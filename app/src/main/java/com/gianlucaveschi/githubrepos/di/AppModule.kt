@@ -1,7 +1,9 @@
 package com.gianlucaveschi.githubrepos.di
 
+import com.gianlucaveschi.data.api.GithubService
 import com.gianlucaveschi.githubrepos.BuildConfig
 import com.gianlucaveschi.data.repo.MainRepositoryImpl
+import com.gianlucaveschi.domain.repo.MainRepository
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -46,25 +48,25 @@ object AppModule {
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .build()
-            .create(com.gianlucaveschi.data.api.GithubService::class.java)
+            .create(GithubService::class.java)
     }
 
     @Singleton
     @Provides
-    fun provideRepository(githubService: com.gianlucaveschi.data.api.GithubService): com.gianlucaveschi.domain.repo.MainRepository {
+    fun provideRepository(githubService: GithubService): com.gianlucaveschi.domain.repo.MainRepository {
         return MainRepositoryImpl(githubService)
     }
 
     @Singleton
     @Provides
     fun provideGetGithubRepoListUseCase(
-        mainRepository: com.gianlucaveschi.domain.repo.MainRepository
+        mainRepository: MainRepository
     ) = com.gianlucaveschi.domain.interactors.GetGithubRepoListUseCase(mainRepository)
 
     @Singleton
     @Provides
     fun provideGetRepoCommitListUseCase(
-        mainRepository: com.gianlucaveschi.domain.repo.MainRepository
+        mainRepository: MainRepository
     ) = com.gianlucaveschi.domain.interactors.GetRepoCommitListUseCase(mainRepository)
 
 }

@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GhRepoListViewModel @Inject constructor(
-    private val getGithubRepoListUseCase: com.gianlucaveschi.domain.interactors.GetGithubRepoListUseCase
+    private val getGithubRepoListUseCase: GetGithubRepoListUseCase
 ) : ViewModel() {
 
     private val _githubRepos = MutableLiveData<com.gianlucaveschi.domain.model.GhRepoList>()
