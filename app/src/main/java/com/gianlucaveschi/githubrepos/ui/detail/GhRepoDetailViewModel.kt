@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gianlucaveschi.domain.interactors.GetRepoCommitListUseCase
+import com.gianlucaveschi.githubrepos.ui.list.GhRepoListViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -24,8 +25,9 @@ class GhRepoDetailViewModel @Inject constructor(
             state.data?.let {
                 _githubRepoCommits.value = it
             }
-            githubRepoCommits.value?.forEach {
-                Log.d(TAG, "getDataFromGithub: ${it.url}")
+            state.error.let {
+                //In a real scenario this error should be propagated to the UI
+                Log.d(TAG, "getCommitsForRepo: $it")
             }
         }
     }

@@ -24,8 +24,9 @@ class GhRepoListViewModel @Inject constructor(
             state.data?.let {
                 _githubRepos.value = it
             }
-            githubGhRepoList.value?.forEach {
-                Log.d(TAG, "getDataFromGithub: ${it.name}")
+            state.error.let {
+                //In a real scenario this error should be propagated to the UI
+                Log.d(TAG, "getGithubRepositoryForUser: $it")
             }
         }
     }

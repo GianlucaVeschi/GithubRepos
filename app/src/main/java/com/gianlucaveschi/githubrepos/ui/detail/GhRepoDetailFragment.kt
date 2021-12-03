@@ -15,10 +15,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class GhRepoDetailFragment : Fragment() {
 
+    private val args: GhRepoDetailFragmentArgs by navArgs()
     private val viewModel: GhRepoDetailViewModel by viewModels()
     private lateinit var binding: GhRepoDetailFragmentBinding
     private lateinit var ghCommitListAdapter: GhCommitListAdapter
-    private val args: GhRepoDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
